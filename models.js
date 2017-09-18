@@ -6,7 +6,8 @@ const postSchema = mongoose.Schema({
   author: {
     firstName: String,
     lastName: String
-  }
+  },
+  created: Date
 })
 
 postSchema.virtual('authorName').get(function () {

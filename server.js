@@ -10,6 +10,14 @@ const {Post} = require('./models')
 
 const app = express()
 
+// const blogRouter = require('./blogRouter')
+
+app.use(express.static('public'))
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/views/index.html')
+})
+
 // catch-all endpoint if client makes request to non-existent endpoint
 app.use('*', function (req, res) {
   res.status(404).json({message: 'Not Found'})
