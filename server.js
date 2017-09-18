@@ -6,17 +6,18 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
 const {PORT, DATABASE_URL} = require('./config')
-const {Post} = require('./models')
 
 const app = express()
 
-// const blogRouter = require('./blogRouter')
+const blogRouter = require('./blogRouter')
 
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html')
 })
+
+app.use('/posts', blogRouter)
 
 // catch-all endpoint if client makes request to non-existent endpoint
 app.use('*', function (req, res) {
