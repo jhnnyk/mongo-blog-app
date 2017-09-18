@@ -24,4 +24,13 @@ router.get('/', (req, res) => {
     })
 })
 
+router.get('/:id', (req, res) => {
+  Post
+    .findById(req.params.id)
+    .then(post => res.json(post.apiRepr()))
+    .catch(err => {
+      res.status(500).json({message: 'Internal server error'})
+    })
+})
+
 module.exports = router
