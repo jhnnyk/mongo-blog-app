@@ -7,7 +7,7 @@ const postSchema = mongoose.Schema({
     firstName: String,
     lastName: String
   },
-  created: Date
+  created: {type: Date, required: true, default: new Date()}
 })
 
 postSchema.virtual('authorName').get(function () {
@@ -16,10 +16,10 @@ postSchema.virtual('authorName').get(function () {
 
 postSchema.methods.apiRepr = function () {
   return {
-    id: this._id,
     title: this.title,
     content: this.content,
-    author: this.authorName
+    author: this.authorName,
+    created: this.created
   }
 }
 
