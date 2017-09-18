@@ -82,4 +82,11 @@ router.put('/:id', (req, res) => {
     .catch(err => res.status(500).json({message: 'Internal server error'}))
 })
 
+router.delete('/:id', (req, res) => {
+  Post
+    .findByIdAndRemove(req.params.id)
+    .then(post => res.status(204).end())
+    .catch(err => res.status(500).json({message: 'Internal server error'}))
+})
+
 module.exports = router
