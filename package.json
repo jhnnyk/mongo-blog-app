@@ -1,0 +1,30 @@
+{
+  "name": "mongo-blog-app",
+  "version": "0.0.1",
+  "description": "Thinkful Challenge Mongo/Mongoose Blogging app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhnnyk/mongo-blog-app.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongoose",
+    "npm",
+    "node",
+    "javascript"
+  ],
+  "author": "John Knotts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhnnyk/mongo-blog-app/issues"
+  },
+  "homepage": "https://github.com/jhnnyk/mongo-blog-app#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.11"
+  }
+}
